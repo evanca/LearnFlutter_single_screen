@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: new Container(
+          // Padding for the whole Container widget, padding here is a Container property
+          padding: const EdgeInsets.all(16.0),
           decoration: new BoxDecoration(
             image: new DecorationImage(
                 image: new AssetImage('images/bg.png'), fit: BoxFit.cover),
@@ -30,11 +32,21 @@ class MyApp extends StatelessWidget {
             children: [
               Image.asset('images/logo.png',
                   width: 225.0, height: 225.0, fit: BoxFit.contain),
-              Center(
-                child: Text(
-                    '2814  Morningview Lane\nRedan, GA 30074\n641-998-7204'),
+              new Padding(
+                padding: new EdgeInsets.all(16.0),
+                child: Container(
+                  padding: new EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
+                  color: Colors.white,
+                  child: Text(
+                    '2814  Morningview Lane\nRedan, GA 30074\n641-998-7204',
+                    style: new TextStyle(
+                        fontSize: 20.0, height: 1.5, color: Color(0xFF757c81)),
+                  ),
+                ),
               ),
-              Center(
+              // Padding for the Text, padding here is a widget that insets its child by the given padding
+              new Padding(
+                padding: new EdgeInsets.all(16.0),
                 child: Text(
                     'There is a powerful driving force inside every human being that, once unleashed, can make any vision, dream, or desire a reality.'),
               ),
