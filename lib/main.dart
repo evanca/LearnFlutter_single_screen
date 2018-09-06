@@ -21,7 +21,10 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: new Container(
-          color: Colors.lightBlueAccent,
+          decoration: new BoxDecoration(
+            image: new DecorationImage(
+                image: new AssetImage('images/bg.png'), fit: BoxFit.cover),
+          ),
           child: Center(
             child: Text('Hello World'),
           ),
