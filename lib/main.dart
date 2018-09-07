@@ -21,8 +21,6 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: new Container(
-          // Padding for the whole Container widget, padding here is a Container property
-          padding: const EdgeInsets.all(16.0),
           decoration: new BoxDecoration(
             image: new DecorationImage(
                 image: new AssetImage('images/bg.png'), fit: BoxFit.cover),
@@ -33,11 +31,18 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               /* Row one starts here! */
-              Image.asset('images/logo.png',
-                  width: 225.0, height: 225.0, fit: BoxFit.contain),
-              /* Row two starts here! */
               new Padding(
-                padding: new EdgeInsets.all(16.0),
+                padding: new EdgeInsets.all(32.0),
+                child: new Align(
+                  alignment: Alignment.centerLeft,
+                  child: Image.asset('images/logo.png',
+                      width: 225.0, height: 225.0, fit: BoxFit.contain),
+                ),
+              ),
+
+              /* Row two starts here! */
+              new Align(
+                alignment: Alignment.centerRight,
                 child: Container(
                   padding: new EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
                   color: Colors.white,
@@ -48,12 +53,12 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
+
               /* Row three starts here! */
-              // Padding for the Text, padding here is a widget that insets its child by the given padding
               new Padding(
-                padding: new EdgeInsets.all(16.0),
+                padding: new EdgeInsets.all(32.0), // Padding outside the text Container
                 child: Container(
-                  padding: new EdgeInsets.all(16.0),
+                  padding: new EdgeInsets.all(16.0), // Padding outside the Text
                   color: Color(0xCC42A7D1),
                   child: Text(
                     'There is a powerful driving force inside every human being that, once unleashed, can make any vision, dream, or desire a reality.',
