@@ -29,9 +29,13 @@ class MyApp extends StatelessWidget {
           ),
           // Column widget that displays its children in a vertical array
           child: Column(
+            // Center everything vertically
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              /* Row one starts here! */
               Image.asset('images/logo.png',
                   width: 225.0, height: 225.0, fit: BoxFit.contain),
+              /* Row two starts here! */
               new Padding(
                 padding: new EdgeInsets.all(16.0),
                 child: Container(
@@ -44,11 +48,19 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
+              /* Row three starts here! */
               // Padding for the Text, padding here is a widget that insets its child by the given padding
               new Padding(
                 padding: new EdgeInsets.all(16.0),
-                child: Text(
-                    'There is a powerful driving force inside every human being that, once unleashed, can make any vision, dream, or desire a reality.'),
+                child: Container(
+                  padding: new EdgeInsets.all(16.0),
+                  color: Color(0xCC42A7D1),
+                  child: Text(
+                    'There is a powerful driving force inside every human being that, once unleashed, can make any vision, dream, or desire a reality.',
+                    style: new TextStyle(
+                        fontSize: 16.0, height: 1.5, color: Colors.white),
+                  ),
+                ),
               ),
             ],
           ),
